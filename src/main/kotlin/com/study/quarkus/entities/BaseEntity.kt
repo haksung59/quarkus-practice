@@ -1,23 +1,35 @@
 package com.study.quarkus.entities
 
+import com.study.quarkus.serializers.TimestampSerializer
+import kotlinx.serialization.Serializable
+import org.hibernate.annotations.CreationTimestamp
+import org.hibernate.annotations.UpdateTimestamp
 import java.time.Instant
 import javax.persistence.Column
 import javax.persistence.MappedSuperclass
 
+@Serializable
 @MappedSuperclass
-open class BaseEntity {
+abstract class BaseEntity (
 
     @Column(name = "rgst_user_id", nullable = false, length = 10)
-    open var rgstUserId: String? = null
+    var rgstUserId: String? = null,
 
-    @Column(name = "rgst_dttm", nullable = false)
-    open var rgstDttm: Instant? = null
+    @Column(name = "rgst_dttm", nullable = false, updatable = false)
+    @CreationTimestamp
+    @Serializable(with = TimestampSerializer::class)
+    var rgstDttm: Instant? = null,
 
     @Column(name = "updt_user_id", nullable = false, length = 10)
-    open var updtUserId: String? = null
+    var updtUserId: String? = null,
 
     @Column(name = "updt_dttm", nullable = false)
-    open var updtDttm: Instant? = null
+    @UpdateTimestamp
+    @Serializable(with = TimestampSerializer::class)
+    var updtDttm: Instant? = null,
 
-    constructor()
+    ): java.io.Serializable {
+    companion object {
+        private const val serialVersionUID: Long = 2222222222222L
+    }
 }

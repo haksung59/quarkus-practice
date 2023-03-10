@@ -1,7 +1,6 @@
 package com.study.quarkus.endpoints
 
 import com.study.quarkus.services.UserService
-import org.eclipse.microprofile.openapi.annotations.Operation
 import org.eclipse.microprofile.openapi.annotations.tags.Tag
 import org.jboss.logging.Logger
 import javax.inject.Inject
@@ -16,7 +15,5 @@ class TestUser {
 
     @Inject
     lateinit var service: UserService
-
-    @Operation
 
 }

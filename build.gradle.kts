@@ -30,6 +30,7 @@ dependencies {
     implementation("io.quarkus:quarkus-jdbc-mysql")
     implementation("io.quarkus:quarkus-resteasy-reactive-kotlin-serialization")
     implementation("io.quarkus:quarkus-arc")
+    implementation("io.quarkus:quarkus-cache")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")

@@ -2,10 +2,14 @@ package com.study.quarkus.services
 
 import com.study.quarkus.entities.InfoUser
 import com.study.quarkus.repositories.UserRepository
+import com.study.quarkus.utils.TokenSecuredResource
+import io.quarkus.cache.CacheManager
+import io.quarkus.cache.CacheResult
 import org.eclipse.microprofile.jwt.JsonWebToken
 import org.jboss.logging.Logger
 import javax.enterprise.context.ApplicationScoped
 import javax.inject.Inject
+import javax.persistence.Cacheable
 import javax.transaction.Transactional
 
 @ApplicationScoped
@@ -28,12 +32,21 @@ class UserService {
     }
 
     @Transactional
-    fun login(infoUser: InfoUser){
+    @CacheResult(cacheName = "jwt")
+    fun login(infoUser: InfoUser) :String {
         var findUser = repository.findByUserId(infoUser.id!!)
+        lateinit var strToken: String
 
         if(infoUser.pw.equals(findUser!!.pw)){
-            log.debug("비밀번호 일치")
+            strToken = "Bearer " + TokenSecuredResource.generateToken(findUser.id!!)
         }
+
+        return strToken
+    }
+
+    @Transactional
+    fun home(cacheKey: String){
+        log.info(cacheKey)
     }
 
 }

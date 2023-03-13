@@ -46,7 +46,7 @@ class TokenSecuredResource {
         fun generateToken(userId: String): String {
             return Jwt.issuer("https://example.com/issuer")
                 .upn(userId)
-                .groups("User")
+                .groups("USER")
                 .claim(
                     Claims.birthdate.name, "1993-05-22"
                 ).sign()

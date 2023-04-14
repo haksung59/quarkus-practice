@@ -4,6 +4,7 @@ plugins {
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.allopen") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
+    kotlin("plugin.noarg") version kotlinVersion
     id("io.quarkus")
 }
 
@@ -30,7 +31,6 @@ dependencies {
     implementation("io.quarkus:quarkus-jdbc-mysql")
     implementation("io.quarkus:quarkus-resteasy-reactive-kotlin-serialization")
     implementation("io.quarkus:quarkus-arc")
-    implementation("io.quarkus:quarkus-cache")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
@@ -42,6 +42,13 @@ version = "1.0-SNAPSHOT"
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+noArg {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.Embeddable")
+    annotation("javax.persistence.MappedSuperclass")
+    annotation("org.sbas.utils.NoArg")
 }
 
 tasks.withType<Test> {

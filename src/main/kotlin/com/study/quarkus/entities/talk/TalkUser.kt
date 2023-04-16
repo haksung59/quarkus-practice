@@ -53,6 +53,6 @@ data class TalkUserId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -1503013811160659182L
+        private const val serialVersionUID = -1503013334910659182L
     }
 }

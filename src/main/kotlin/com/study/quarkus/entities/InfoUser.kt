@@ -20,6 +20,6 @@ class InfoUser (
 
 ): BaseEntity(), java.io.Serializable {
     companion object {
-        private const val serialVersionUID: Long = 1111111111111L
+        private const val serialVersionUID: Long = 17516245789991L
     }
 }

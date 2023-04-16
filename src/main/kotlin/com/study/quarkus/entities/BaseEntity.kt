@@ -30,6 +30,6 @@ abstract class BaseEntity (
 
     ): java.io.Serializable {
     companion object {
-        private const val serialVersionUID: Long = 2222222222222L
+        private const val serialVersionUID: Long = -7221427221322L
     }
 }

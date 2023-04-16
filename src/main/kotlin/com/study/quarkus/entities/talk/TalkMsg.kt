@@ -63,6 +63,6 @@ data class TalkMsgId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -544776586376217282L
+        private const val serialVersionUID = -544776581647917282L
     }
 }

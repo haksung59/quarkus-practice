@@ -55,6 +55,6 @@ data class TalkRoomId(
 ) : Serializable {
 
     companion object {
-        private const val serialVersionUID = -7947377909525848027L
+        private const val serialVersionUID = -7947377909997848027L
     }
 }

@@ -2,12 +2,10 @@ package com.study.quarkus.services
 
 import com.study.quarkus.entities.InfoUser
 import com.study.quarkus.repositories.UserRepository
-import com.study.quarkus.utils.TokenSecuredResource
 import org.eclipse.microprofile.jwt.JsonWebToken
 import org.jboss.logging.Logger
 import javax.enterprise.context.ApplicationScoped
 import javax.inject.Inject
-import javax.persistence.Cacheable
 import javax.transaction.Transactional
 
 @ApplicationScoped
@@ -27,11 +25,6 @@ class UserService {
         request.rgstUserId=request.id
         request.updtUserId=request.id
         repository.persist(request)
-    }
-
-    @Transactional
-    fun home(cacheKey: String){
-        log.info(cacheKey)
     }
 
 }

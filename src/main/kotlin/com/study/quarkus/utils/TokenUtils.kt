@@ -12,7 +12,7 @@ class TokenUtils {
 
         @Produces(MediaType.TEXT_PLAIN)
         fun helloRolesAllowed(@Context ctx: SecurityContext, jwt: JsonWebToken): String {
-            return debugJwtContent(jwt, ctx)// + ", birthdate: " + jwt.claim<Any?>("birthdate").toString()
+            return debugJwtContent(jwt, ctx)
         }
         private fun hasJwt(jwt: JsonWebToken): Boolean {
             return jwt.claimNames != null
@@ -32,11 +32,19 @@ class TokenUtils {
         }
 
         fun generateUserToken(userId: String): String {
-            return Jwt.issuer("https://example.com/issuer")
+            return Jwt.issuer("https://quarkus-practice.com/issuer")
                     .upn(userId)
                     .expiresIn(60 * 60 * 24 * 30)//30일
                     .groups("USER")
                     .sign()
+        }
+
+        fun generateAdminToken(userId: String): String {
+            return Jwt.issuer("https://quarkus-practice.com/issuer")
+                .upn(userId)
+                .expiresIn(60 * 60 * 24 * 30)//30일
+                .groups("ADMIN")
+                .sign()
         }
 
     }

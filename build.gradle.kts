@@ -21,7 +21,6 @@ dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-hibernate-orm")
     implementation("io.quarkus:quarkus-rest-client-reactive")
-    implementation("io.quarkus:quarkus-rest-client-reactive-kotlin-serialization")
     implementation("io.quarkus:quarkus-hibernate-validator")
     implementation("io.quarkus:quarkus-resteasy-reactive")
     implementation("io.quarkus:quarkus-smallrye-openapi")
@@ -29,13 +28,11 @@ dependencies {
     implementation("io.quarkus:quarkus-kotlin")
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin")
     implementation("io.quarkus:quarkus-jdbc-mysql")
-    implementation("io.quarkus:quarkus-resteasy-reactive-kotlin-serialization")
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-smallrye-reactive-messaging")
     implementation("io.quarkus:quarkus-websockets")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
-    runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 }
 
 group = "com.study.quarkus"

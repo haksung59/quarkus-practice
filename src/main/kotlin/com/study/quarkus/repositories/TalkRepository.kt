@@ -1,9 +1,9 @@
 package com.study.quarkus.repositories
 
+import com.study.quarkus.entities.talk.*
 import com.study.quarkus.responses.TalkRoomResponse
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheRepositoryBase
 import kotlinx.coroutines.runBlocking
-import org.sbas.entities.talk.*
 import java.time.Instant
 import javax.enterprise.context.ApplicationScoped
 import javax.inject.Inject

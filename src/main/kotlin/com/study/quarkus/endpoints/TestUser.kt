@@ -15,7 +15,7 @@ import javax.ws.rs.Path
 import javax.ws.rs.core.Response
 
 @Tag(name = "test", description = "test API")
-@Path("api/v1")
+@Path("v1/test")
 class TestUser {
 
     @Inject

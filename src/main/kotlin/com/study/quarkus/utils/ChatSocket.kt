@@ -8,7 +8,7 @@ import io.vertx.core.json.JsonArray
 import io.vertx.core.json.JsonObject
 import kotlinx.coroutines.*
 import org.jboss.logging.Logger
-import org.sbas.entities.talk.TalkMsg
+import com.study.quarkus.entities.talk.TalkMsg
 import javax.inject.Inject
 import javax.websocket.*
 import javax.websocket.server.PathParam

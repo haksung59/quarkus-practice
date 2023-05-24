@@ -1,4 +1,4 @@
-package org.sbas.entities.talk
+package com.study.quarkus.entities.talk
 
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp

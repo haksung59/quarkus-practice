@@ -7,6 +7,7 @@ import com.study.quarkus.responses.CommonResponse
 import com.study.quarkus.utils.CustomizedException
 import org.eclipse.microprofile.jwt.JsonWebToken
 import org.jboss.logging.Logger
+import java.time.Instant
 import javax.enterprise.context.ApplicationScoped
 import javax.inject.Inject
 import javax.transaction.Transactional
@@ -25,10 +26,11 @@ class UserService {
     private lateinit var userRepository : UserRepository
 
     @Transactional
-    fun join(request: InfoUser) {
+    fun join(request: InfoUser) : CommonResponse<String> {
         request.rgstUserId=request.id
         request.updtUserId=request.id
         userRepository.persist(request)
+        return CommonResponse("success")
     }
 
     @Transactional

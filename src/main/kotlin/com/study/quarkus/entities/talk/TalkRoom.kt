@@ -1,4 +1,4 @@
-package org.sbas.entities.talk
+package com.study.quarkus.entities.talk
 
 import com.study.quarkus.entities.BaseEntity
 import java.io.Serializable

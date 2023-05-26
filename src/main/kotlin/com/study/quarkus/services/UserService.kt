@@ -27,10 +27,15 @@ class UserService {
 
     @Transactional
     fun join(request: InfoUser) : CommonResponse<String> {
-        request.rgstUserId=request.id
-        request.updtUserId=request.id
-        userRepository.persist(request)
-        return CommonResponse("success")
+        val existingUser = userRepository.findByUserId(request.id!!)
+        return if (existingUser == null) {
+            request.rgstUserId=request.id
+            request.updtUserId=request.id
+            userRepository.persist(request)
+            CommonResponse("success")
+        } else {
+            CommonResponse("중복된 아이디가 있습니다.")
+        }
     }
 
     @Transactional

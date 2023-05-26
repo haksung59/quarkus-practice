@@ -48,7 +48,7 @@ data class TalkUserId(
 
     @Size(max = 10)
     @NotNull
-    @Column(name = "user_id", nullable = false, length = 10)
+    @Column(name = "user_id", nullable = false, length = 15)
     var userId: String? = null, // 사용자 ID
 ) : Serializable {
 

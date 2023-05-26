@@ -12,14 +12,14 @@ import javax.persistence.MappedSuperclass
 @EntityListeners(BaseEntityListener::class)
 abstract class BaseEntity (
 
-    @Column(name = "rgst_user_id", nullable = false, length = 12)
+    @Column(name = "rgst_user_id", nullable = false, length = 15)
     var rgstUserId: String? = null,
 
     @Column(name = "rgst_dttm", nullable = false, updatable = false)
     @CreationTimestamp
     var rgstDttm: Instant? = null,
 
-    @Column(name = "updt_user_id", nullable = false, length = 12)
+    @Column(name = "updt_user_id", nullable = false, length = 15)
     var updtUserId: String? = null,
 
     @Column(name = "updt_dttm", nullable = false)

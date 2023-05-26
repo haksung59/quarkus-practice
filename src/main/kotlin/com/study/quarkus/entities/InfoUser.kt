@@ -15,7 +15,7 @@ import javax.persistence.Table
 class InfoUser (
 
     @Id
-    @Column(name = "user_id", nullable = false, length = 12)
+    @Column(name = "user_id", nullable = false, length = 15)
     var id: String? = null,
 
     @Column(name = "pw", nullable = false, length = 100)
@@ -24,17 +24,20 @@ class InfoUser (
     @Column(name = "username", nullable = false, length = 12)
     var username: String? = null,
 
+    @Column(name = "birth", nullable = false, length = 6)
+    var birth: String? = null,
+
     @Column(name = "pwErrCnt")
     var pwErrCnt: Int? = 0,
 
-    @Column(name = "rgst_user_id", nullable = false, length = 12)
+    @Column(name = "rgst_user_id", nullable = false, length = 15)
     var rgstUserId: String? = null,
 
     @Column(name = "rgst_dttm", nullable = false, updatable = false)
     @CreationTimestamp
     var rgstDttm: Instant? = null,
 
-    @Column(name = "updt_user_id", nullable = false, length = 12)
+    @Column(name = "updt_user_id", nullable = false, length = 15)
     var updtUserId: String? = null,
 
     @Column(name = "updt_dttm", nullable = false)

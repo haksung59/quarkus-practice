@@ -38,7 +38,7 @@ class TalkRoom(
 
     @Size(max = 10)
     @NotNull
-    @Column(name = "cret_user_id", nullable = false, length = 10)
+    @Column(name = "cret_user_id", nullable = false, length = 15)
     var cretUserId: String? = null,
 ) : BaseEntity()
 
